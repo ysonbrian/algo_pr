@@ -1,0 +1,22 @@
+import sys
+t = int(input())
+count = 0
+a = list(map(int, sys.stdin.readline().split(" ")))
+
+def sosu(num):
+    if num == 1:
+        return False
+    elif num == 2: return True
+
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    return True
+
+for i in a:
+    if sosu(i):
+        count +=1
+
+print(count)
+
+소수찾는 문제 간단히 풀수있다

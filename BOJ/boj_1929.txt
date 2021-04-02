@@ -1,0 +1,16 @@
+a, b = map(int, input().split(" "))
+
+def sosu(num):
+    if num == 1:
+        return False
+    for i in range(2, int(num**0.5)+1):
+        if num % i == 0:
+            return False
+    return True
+
+for i in range(a, b+1):
+    if sosu(i):
+        print(i)
+
+큰 정수의 소수를 for문으로 돌리면 시간초과가 일어난다. 확인하는 숫자의 제곱근 까지만 확인하면
+모든 숫자를 확인안해도 소수인지 아닌지 판단 가능하다
