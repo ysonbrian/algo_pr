@@ -1,0 +1,11 @@
+N, M = map(int, input().split())
+result = 0
+# low = -9999
+for i in range(N):
+    list_num = list(map(int, input().split()))
+    list_min = min(list_num)
+    # if low < list_min: 내가 한 부
+    #     low = list_min분
+    result = max(result, list_min)
+#     훨씬 깔끔한 것을 알수 있음
+print(result)
