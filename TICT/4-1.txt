@@ -1,0 +1,46 @@
+# 상하좌우
+# N x N 행렬을 벗어나지 않으면서 명령어에 따라 목적지에 도착한 좌표를 출력.
+# 좌표는 무조건 (1,1) 에서 시작한다.
+# 좌표가 0 또는 N 보다 클 수 없다.
+
+N = int(input())
+x, y = 1, 1
+plans = input().split()
+
+plans = input().split()
+
+# L, R, U, D에 따른 이동 방향
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+move_types = ['L', 'R', 'U', 'D']
+
+for plan in plans:
+
+    for i in range(len(move_types)):
+        if plan == move_types[i]:
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+    if nx < 1 or ny < 1 or nx > N or ny > N:
+        continue
+
+    x,y = nx, ny
+
+# L, R, U, D에 따른 이동 방향
+dx = [0, 0, -1, 1]
+dy = [-1, 1, 0, 0]
+move_types = ['L', 'R', 'U', 'D']
+
+for plan in plans:
+
+    for i in range(len(move_types)):
+        if plan == move_types[i]:
+            nx = x + dx[i]
+            ny = y + dy[i]
+
+    if nx < 1 or ny < 1 or nx > N or ny > N:
+        continue
+
+    x,y = nx, ny
+
+print(x,y)
