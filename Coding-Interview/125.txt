@@ -1,0 +1,35 @@
+#List version
+
+def isPalindrome(word):
+  words = []
+  for char in word:
+    if char.isalnum():
+      words.append(char.lower())
+
+  while len(words) > 1:
+    if words.pop(0) != words.pop()
+      return False
+  return True
+
+# Deque version
+
+def isPalindrome(word):
+  words = collections.deque()
+
+  for char in word:
+    if char.isalnum():
+      words.append(char.lower())
+
+  while len(words) > 1:
+    if words.popleft() != words.pop():
+      return False
+  return True
+
+# Slicing version
+
+def isPalindrome(word):
+  word = word.lower()
+  word = re.sub('[^a-z0-9]', '', word)
+
+  return word == word[::-1]
+
