@@ -1,0 +1,11 @@
+N = int(input())
+M = list(map(int, input()))
+
+M.reverse()
+result = N * M[0]
+print(result)
+for i in range(1, len(M)):
+    ans = N * M[i]
+    print(ans)
+    result += ans * 10 ** i
+print(result)
