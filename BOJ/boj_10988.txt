@@ -1,0 +1,6 @@
+def palindrome(words):
+    return int(words == words[::-1])
+
+arr = input()
+
+print(palindrome(arr))
