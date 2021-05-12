@@ -1,28 +1,24 @@
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
+#include <stdbool.h>
 
-char player[1000000];
-char name[1000000];
+bool isPalindrome(int x) {
+    if(x < 0)
+        return false;
+    if(x == 0)
+        return true;
+    int result = 0, before = x;
+    while(x) {
+        result = result * 10 + x % 10;
+        x /= 10;
+    }
+    return result == before;
+}
 
 int main(void){
-  int T, num;
-  int salary;
-  int max;
-  scanf("%d", &T);
-
- for(int i = 0; i < T; i++) {
-   salary = 0;
-   max = -99999999;
-   scanf("%d", &num);
-   for(int j = 0; j < num; j++){
-      scanf("%d %s", &salary, name);
-      if(max < salary){
-        max = salary;
-        strcpy(player, name);
-      }
-   }
-   printf("%s\n", player);
- }
-
-
+  int n;
+  scanf("%d", &n);
+  printf("%s ",isPalindrome(n) ? "true" : "false");
+  return 0;
 }
