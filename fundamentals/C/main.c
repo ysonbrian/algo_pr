@@ -1,24 +1,36 @@
 #include <stdio.h>
 #include <string.h>
-#include <limits.h>
-#include <stdbool.h>
+#include <stdlib.h>
 
-bool isPalindrome(int x) {
-    if(x < 0)
-        return false;
-    if(x == 0)
-        return true;
-    int result = 0, before = x;
-    while(x) {
-        result = result * 10 + x % 10;
-        x /= 10;
+int Binary_Search(int arr[], int size, int target){
+    int start = 0;
+    int end = size - 1;
+    int mid;
+    while(start < size) {
+        mid = (start + size) / 2;
+        if(arr[mid] == target) return 1;
+        if(target < arr[mid])
+            mid -= 1;
+        else
+            mid += 1;
     }
-    return result == before;
+
+    return -1;
+
 }
 
-int main(void){
-  int n;
-  scanf("%d", &n);
-  printf("%s ",isPalindrome(n) ? "true" : "false");
-  return 0;
+
+int main() {
+    int arr = {1,2,3,4,5,6,7,8,9};
+    int idx;
+    idx = Binary_Search(arr, sizeof(arr) / sizeof(int), 8);
+    if(idx == -1) {
+        printf("Not found!\n");
+    } else{
+        printf("Found it!");
+    }
+
+    return 0;
+
+
 }
