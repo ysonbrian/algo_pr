@@ -35,6 +35,7 @@ int main(void)
             cout << "Possible" << "\n";
         else
             cout << "Impossible" << "\n";
+
         fill(freq, freq+26, 0);
         fill(freq2, freq2+26, 0);
     }
