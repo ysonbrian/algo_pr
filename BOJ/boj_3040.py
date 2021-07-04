@@ -10,3 +10,6 @@ for i in range(8):
             del data[j-1]
             print(*data, sep="\n")
             break
+
+
+#
